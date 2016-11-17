@@ -1,0 +1,7 @@
+SELECT BillingCountry, count(*) as number
+From Invoice
+group by BillingCountry
+order by number
+DESC
+limit 3;
+'''
