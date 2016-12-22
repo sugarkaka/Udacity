@@ -19,4 +19,10 @@ def parse_maybe_int(i):
         return None
     else:
         return int(i)
-   
+
+import unicodecsv
+def read_csv(filename):
+    with open(filename, 'rb') as f 
+    reader = unicodecsv.DictReader(f)
+    return list(reader)
+enrollments = read_csv('/datasets/ud107')
