@@ -47,3 +47,9 @@ unique_project_submitters = set()
 for submission in project_submissions:
     unique_project_submitters.add(submission['account_key'])
 len(unique_project_submitters)
+
+
+'account_key'
+for engagement_record in daily_engagement:
+    engagement_record['account_key'] = engagement_record['acct']
+    del[engagement_record['acct']]
