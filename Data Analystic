@@ -53,3 +53,12 @@ len(unique_project_submitters)
 for engagement_record in daily_engagement:
     engagement_record['account_key'] = engagement_record['acct']
     del[engagement_record['acct']]
+
+def find_last(string, target):
+    last_pos = -1
+    while True:
+        pos = string.find(target, last_pos + 1)
+        if pos == -1:
+            return last_pos
+            last_pos = pos
+
