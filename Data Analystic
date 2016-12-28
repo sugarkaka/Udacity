@@ -69,3 +69,30 @@ def round(x):
     num = x + 0.5
     start = str(num).find('.')
     return num[ : start]
+
+
+def bigger(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def biggest(a,b,c):
+    return bigger(a,bigger(b,c))
+
+def median(a, b, c):
+    if biggest(a,b,c) == c:
+        return bigger(a, b)
+    if biggest(a,b,c) == b:
+        return bigger(a, c)    
+    if biggest(a,b,c) == a:
+        return bigger(c, b)
+
+		
+def find_last(string, target):
+    last_pos = -1
+    while True:
+        pos = string.find(target, last_pos + 1)
+        if pos == -1:
+           return last_pos
+        last_pos = pos
