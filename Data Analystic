@@ -7,6 +7,7 @@ results  cursor.fetchall()
 print results
 conn.close()
 
+
 From datetime import datetime as dt
 def parse_date(date):
    if date == ' ':
@@ -20,12 +21,14 @@ def parse_maybe_int(i):
     else:
         return int(i)
 
+
 import unicodecsv
 def read_csv(filename):
     with open(filename, 'rb') as f 
     reader = unicodecsv.DictReader(f)
     return list(reader)
 enrollments = read_csv('/datasets/ud107')
+
 
 len(enrollments)
 
@@ -34,25 +37,11 @@ for enrollment in enrollments:
     unique_enrolled_students.add(enrollment['account_key'])
 len(unique_enrolled_students)
 
-len(daily_engagement)
 
-unique_engagement_students = set()
-for engagement_record in daily_engagement:
-    unique_engagement_students.add(engagement_record['acct'])
-len(unique_engagement_students)
-
-len(project_submissions)
-
-unique_project_submitters = set()
-for submission in project_submissions:
-    unique_project_submitters.add(submission['account_key'])
-len(unique_project_submitters)
-
-
-'account_key'
 for engagement_record in daily_engagement:
     engagement_record['account_key'] = engagement_record['acct']
     del[engagement_record['acct']]
+
 
 def find_last(string, target):
     last_pos = -1
@@ -76,3 +65,7 @@ def crawl_web(seed,max_depth):
             tocrawl, next_depth = next_depth, []
             depth = depth + 1
     return crawled
+def round(x):
+    num = x + 0.5
+    start = str(num).find('.')
+    return num[ : start]
