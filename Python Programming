@@ -65,6 +65,8 @@ def crawl_web(seed,max_depth):
             tocrawl, next_depth = next_depth, []
             depth = depth + 1
     return crawled
+
+
 def round(x):
     num = x + 0.5
     start = str(num).find('.')
@@ -112,3 +114,11 @@ def greatest(p):
 	if i > big:
 		big = i
     return big 
+
+def total_enrollment(p):
+    result1 = 0
+    result2 = 0
+    for school, student, tuition in p:
+        result1 = student + result1
+        result2 = tuition * student + result2
+    return result1, result2
